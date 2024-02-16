@@ -368,3 +368,10 @@ explaination:
 
 Q: what is segment violation?
 A: when the program tries to access a memory location which is not permitted to it.
+
+String is Immutable
+		
+for mutable strings, use:
+	// Both almost same
+	StringBuffer // Synchronized, Thread safe
+	StringBuilder // not Synchronized, not Thread safe
