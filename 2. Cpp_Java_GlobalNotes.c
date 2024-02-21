@@ -375,3 +375,17 @@ for mutable strings, use:
 	// Both almost same
 	StringBuffer // Synchronized, Thread safe
 	StringBuilder // not Synchronized, not Thread safe
+
+// java.Collections
+LIST -> Can implement Linked Lists or Array Lists
+	ex: List<Integer> list = new LinkedList<>();
+
+SET -> Unordered lists, won't allow duplicates
+    -> Can implement HashSet, LinkedHashSet or TreeSet
+	 :: HashSet -> Set elements in random order
+	 :: LinkedHashSet -> Set elements based in the order of data entry
+	 :: TreeSet -> Set elements in sorted order (ascending)
+	ex: Set<Integer> set = new HashSet<>();
+
+MAP -> Key:Value pairs, won't allow duplicate keys
+	ex: Map<Integer, String> map = new HashMap<>();
