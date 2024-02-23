@@ -375,6 +375,7 @@ for mutable strings, use:
 	// Both almost same
 	StringBuffer // Synchronized, Thread safe
 	StringBuilder // not Synchronized, not Thread safe
+	StringTokenizer // Fot Token_Splitting_purposes
 
 // java.Collections
 LIST -> Can implement Linked Lists or Array Lists
