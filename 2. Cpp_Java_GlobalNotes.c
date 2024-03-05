@@ -392,7 +392,7 @@ MAP -> Key:Value pairs, won't allow duplicate keys
 	ex: Map<Integer, String> map = new HashMap<>();
 
 
-----------------------    WEB TECHNOLOGIES   ---------------------------
+----------------------------------------------------------------    WEB TECHNOLOGIES   ---------------------------------------------------------------------
 
 URI (Uniform Resource Interface) has 2 parts :-
 	-> URI ex: https://www.google.com/socket/search
@@ -408,3 +408,161 @@ java app <---req/res---> .NET platform
 			=> JSON : more readable
 				: less secure because it is a subset of JS so JS can be used to fetch data and inject malicious code
 			=> XML : more secure
+
+EAR (Enterprise Archive) has 2 parts :-
+	1. JAR : Java Archive (collections of .class files)
+	2. WAR : Web Archive
+
+
+XSL : Extensible Stylesheet Language
+	-> translates XML to other format (ex: HTML)
+XSLT : Extensible Stylesheet Language Transformation 
+	-> used to transform XML to other format
+ex:-
+1. 
+<catalog>
+	<book>
+		<title> Book1 </title>
+		<author> author1 </author>
+	</book>
+	<book>
+		<title> Book2 </title>
+		<author> author2 </author>
+	</book>
+</catalog>
+
+2. 
+<students>
+	<student>
+		<name> Steve </title>
+		<grade> A </author>
+	</student>
+	<student>
+		<name> Tony </title>
+		<grade> C </author>
+	</studnt>
+</students>
+
+==================================================================== CONVERSION STEPS =======================================================================
+
+1. xslt version and namespace declaration
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/2001/XSL/Transform">
+	
+2. setup root element
+<xsl:template match='/'>
+
+this matches root node of xml(/)
+
+3. create html structure
+<html>
+<head>
+    <title>Student Grades</title>
+</head>
+<body>
+	<h1>Student grades</h1>
+	<ul>
+		<xsl: apply-templates select="students/student"/>
+	</ul>
+</body>
+</html>
+
+within root template the above section defines html structure of output doc
+
+4. Template for student element
+<xsl:template match="student">
+
+5. transferring student data
+<li>
+	<xsl:value-of select="name"/>
+	-Grade:<xsl value of select="grade"/>
+</li>
+	
+specifies how each student's data is displayed
+it uses xsl:value-of to retrieve value of name and grade from xml file
+
+================================================================= FINAL CODE (STUDENT)============================================================================
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/2001/XSL/Transform">
+<xsl:template match='/'>
+<html>
+<head>
+    <title>Student Grades</title>
+</head>
+<body>
+	<h1>Student grades</h1>
+	<ul>
+		<xsl: apply-templates select="students/student"/>
+	</ul>
+</body>
+</html>
+<xsl:template match="student">
+<li>
+	<xsl:value-of select="name"/>
+	-Grade:<xsl value of select="grade"/>
+</li>
+</xsl:template>
+</xsl:stylesheet>
+
+======================================================================= APIs ================================================================================
+
+SOAP 	-> Simple Object Access Protocol
+	-> internally uses XML based exchange format
+	-> MORE SECURE BECAUSE XML
+	-> uses protocols like http/smtp/ftp etc
+	-> STATEFUL
+	-> LARGER
+	-> XML CENTRIC
+
+REST 	-> Representational State Transfer Protocol
+	-> uses http methods, different formats like json/xml/html
+		: GET => read
+		: POST => submit/writing
+		: PUT => update
+		: DELETE => delete
+	-> HTTP protocols
+	-> STATELESS
+	-> LIGHTER
+	-> FEATURE CENTRIC
+
+================================================================ SOAP REQUEST FORMAT =========================================================================
+
+<soap envelope xmlns:soap="..." xmlns:ns="http://example.com/bookService>
+<soap:Header>
+<soap:Body>
+<ns:getBookDetails>
+<bookId>123</bookId>
+</ns:getBookDetails>
+</soap:envelop>
+
+================================================================ SOAP RESPONSE FORMAT =========================================================================
+
+<soap envelope xmlns:soap="..." xmlns:ns="http://example.com/bookService">
+<soap:Header>
+<soap:Body>
+<ns:getBookDetailsResponse>
+<book>
+<title>title1</title>
+<author>author1</author>
+</ns:getBookDetailsResponse>
+</soap:body>
+</soap:envelop>
+
+==============================================
+endpoint: http://example.com/bookService
+==============================================
+
+====================================================================== REST ===================================================================================
+HTTP GET:
+GET /books/123 HTTP/1.1
+Host:example.com
+
+Response format(json)
+
+{
+	"title":"title1",
+	"author":"author1"
+}
+
+endpoint: http://example.com/books/{bookId}
