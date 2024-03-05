@@ -390,3 +390,21 @@ SET -> Unordered lists, won't allow duplicates
 
 MAP -> Key:Value pairs, won't allow duplicate keys
 	ex: Map<Integer, String> map = new HashMap<>();
+
+
+----------------------    WEB TECHNOLOGIES   ---------------------------
+
+URI (Uniform Resource Interface) has 2 parts :-
+	-> URI ex: https://www.google.com/socket/search
+
+	1. URN  -> Uniform Resource Number 
+	2. URL  -> Uniform Resource Locator
+		-> URL ex: -> https://www.google.com/socket/search/flower.html
+		-> more specific
+
+java app <---req/res---> .NET platform
+	:: "Message Exchanging format" interprets b/w these two cross-platforms 
+	:: two types 
+			=> JSON : more readable
+				: less secure because it is a subset of JS so JS can be used to fetch data and inject malicious code
+			=> XML : more secure
