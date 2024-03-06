@@ -138,7 +138,7 @@ REST 	-> Representational State Transfer Protocol
 
 ================================================================ SOAP REQUEST FORMAT =========================================================================
 
-<soap envelope xmlns:soap="..." xmlns:ns="http://example.com/bookService>
+<soap envelope xmlns:soap="..." xmlns:ns="http://example.com/bookService">
 <soap:Header>
 <soap:Body>
 <ns:getBookDetails>
