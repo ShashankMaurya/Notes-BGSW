@@ -151,7 +151,7 @@ finalize -> frees the memory space reserved by non-java resources (like a c func
 
 
 java:
-	xyz.java --<compile>--> xyz.class -->bytecode
+	xyz.java --<compile>--> xyz.class --> bytecode --<JVM/interpret>--> machine/object code
 	
 c/cpp:
 	xyz.c/cpp --<C-preprocessor>--> preprocessed_code.i --<compiler>--> assembly_code.s --<assembler>--> object_code_file.o --<linker/link editor>--> executable_file.exe
