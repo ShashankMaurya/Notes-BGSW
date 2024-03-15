@@ -18,3 +18,14 @@ console.log("Hello world");
 
 // -------------------------------------ANGULAR PIPES----------------------------------------
 // "Hello world" | uppercase
+
+// app.module.ts :-
+// -> declarations will contain all components' name
+// -> imports will contain all dependencies
+
+// -------------------------------------ANGULAR COMMANDS----------------------------------------
+// ng new proj_name --no-standalone => for new project
+// ng serve => run project
+// ng g c component_name
+// ng g d directive_name
+// ng g s service_name
