@@ -29,3 +29,4 @@ console.log("Hello world");
 // ng g c component_name
 // ng g d directive_name
 // ng g s service_name
+// ng g p pipe_name
