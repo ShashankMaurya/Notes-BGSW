@@ -1,6 +1,6 @@
 console.log("Hello world");
 
-// "tsc.filename.ts" to convert generate equivalent JS file
+// "tsc filename.ts" to convert generate equivalent JS file
 // "node filename.js" to run JS file
 
 // -------------------------------------ONE-WAY DATA BINDING----------------------------------------
