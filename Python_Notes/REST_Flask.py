@@ -1,6 +1,6 @@
 # pip install flask
 
-from flask import Flask, request, jsonify, redirect, url_for
+from flask import Flask, request, jsonify, redirect, url_for, render_template
 
 app = Flask(__name__)
 
@@ -12,6 +12,11 @@ def home():
     if request.method == 'POST':
         data = request.get_json()
         return "My name is {}, and my age is {}".format(data['name'], data['age'])
+
+
+@app.route('/page', methods=['GET'])
+def render_page():
+    return render_template("index.html")
 
 
 @app.route('/calc/<int:num>', methods=['GET'])
